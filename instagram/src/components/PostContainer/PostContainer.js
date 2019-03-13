@@ -1,10 +1,13 @@
 import React from 'react';
 // import './Footer.css';
 
-const PostContainer = () => {
+import CommentSection from '../CommentSection/CommentSection';
+
+const PostContainer = props => {
   return (
-    <div className='footer'>
-      yo
+    <div>
+      <img src={props.post.imageUrl} />
+      <CommentSection comments={props.post.comments} />
     </div>
   )
 }
