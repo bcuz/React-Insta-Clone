@@ -1,5 +1,5 @@
 import React from 'react';
-// import './Footer.css';
+import './Comment.css';
 
 import Comment from './Comment';
 

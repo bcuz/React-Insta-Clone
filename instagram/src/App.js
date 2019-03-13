@@ -13,7 +13,6 @@ class App extends Component {
   }
   
   render() {
-  // console.log(dummyData[0]);
     return (
       <div className="App">
         <header className="App-header">
