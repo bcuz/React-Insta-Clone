@@ -1,4 +1,4 @@
-const dummyData = [
+const data = [
   {
     username: "philzcoffee",
     thumbnailUrl:
@@ -80,4 +80,4 @@ const dummyData = [
   }
 ];
 
-export default dummyData;
+export default data;
