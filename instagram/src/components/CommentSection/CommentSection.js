@@ -9,7 +9,7 @@ const CommentSection = props => {
   let dateFormatted = props.timestamp.slice(0, sliceTo)
 
   return (    
-    <div>
+    <div className="comments">
       {/* maybe make into separate component */}
       <i className="far fa-heart fa-2x"></i>
       <i className="far fa-comment fa-2x"></i>

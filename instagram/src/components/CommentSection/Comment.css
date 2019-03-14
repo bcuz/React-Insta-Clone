@@ -1,8 +1,12 @@
+.comments {
+  padding: 10px
+}
+
 i {
   margin: 5px 0;
 }
 
-.fa-heart {
+.fa-heart:first-child {
   margin-right: 20px;
 }
 
@@ -16,18 +20,21 @@ span {
 }
 
 p {
-  display: inline-block
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 .date {
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
+  color: #787474;
 }
 
 .addComment {
   border: none;
   padding: 10px 0;
   font-size: 1.8rem;
+  width: 100%;
 }
 
 .addComment:focus {
