@@ -3,8 +3,8 @@ import React from 'react';
 
 const PostHeader = props => {
   return (
-    <div>
-      <img src={props.thumbnail} />
+    <div className='header'>
+      <img className='thumb' src={props.thumbnail} />
       <span className='username'>{props.username}</span>
     </div>
   )
