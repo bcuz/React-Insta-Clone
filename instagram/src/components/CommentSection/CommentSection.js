@@ -11,7 +11,9 @@ const CommentSection = props => {
   return (    
     <div>
       {/* maybe make into separate component */}
-      <div>{props.likes} likes</div>
+      <i class="far fa-heart fa-2x"></i>
+      <i class="far fa-comment fa-2x"></i>
+      <div className='likes'>{props.likes} likes</div>
       {props.comments.map(comment => <Comment comment={comment} /> )}
       <div>{dateFormatted}</div>
     </div>
