@@ -1,6 +1,6 @@
 import React from 'react';
 // import './Footer.css';
-
+import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection';
 import PostImg from './PostImg';
 import PostHeader from './PostHeader';
@@ -16,6 +16,13 @@ const PostContainer = props => {
       timestamp={props.post.timestamp} />
     </div>
   )
+}
+
+PostContainer.propTypes = {
+  post: PropTypes.shape({
+    username: PropTypes.string,
+    likes: PropTypes.number,
+  })
 }
 
 export default PostContainer;

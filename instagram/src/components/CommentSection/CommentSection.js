@@ -1,6 +1,6 @@
 import React from 'react';
 import './Comment.css';
-
+import PropTypes from 'prop-types';
 import Comment from './Comment';
 
 const CommentSection = props => {
@@ -11,13 +11,17 @@ const CommentSection = props => {
   return (    
     <div>
       {/* maybe make into separate component */}
-      <i class="far fa-heart fa-2x"></i>
-      <i class="far fa-comment fa-2x"></i>
+      <i className="far fa-heart fa-2x"></i>
+      <i className="far fa-comment fa-2x"></i>
       <div className='likes'>{props.likes} likes</div>
       {props.comments.map(comment => <Comment comment={comment} /> )}
       <div>{dateFormatted}</div>
     </div>
   )
+}
+
+CommentSection.propTypes = {
+  comments: PropTypes.array
 }
 
 export default CommentSection;

@@ -11,9 +11,9 @@ const SearchBar = props => {
         </div>
         <input type="text" placeholder="Search" />
         <div className="user">
-          <i class="far fa-compass fa-2x"></i>
-          <i class="far fa-heart fa-2x"></i>
-          <i class="far fa-user fa-2x"></i>
+          <i className="far fa-compass fa-2x"></i>
+          <i className="far fa-heart fa-2x"></i>
+          <i className="far fa-user fa-2x"></i>
         </div>
       </div>
     </header>
