@@ -5,7 +5,7 @@ const PostHeader = props => {
   return (
     <div>
       <img src={props.thumbnail} />
-      {props.username}
+      <span className='username'>{props.username}</span>
     </div>
   )
 }

@@ -15,7 +15,8 @@ const CommentSection = props => {
       <i className="far fa-comment fa-2x"></i>
       <div className='likes'>{props.likes} likes</div>
       {props.comments.map(comment => <Comment comment={comment} /> )}
-      <div>{dateFormatted}</div>
+      <div className='date'>{dateFormatted}</div>
+      <input className="addComment" type="text" placeholder="Add a comment..." />
     </div>
   )
 }

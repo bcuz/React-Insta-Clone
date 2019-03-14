@@ -9,7 +9,7 @@ const SearchBar = props => {
           <i className="fab fa-instagram fa-2x"></i> 
           <h1>Instagram</h1>
         </div>
-        <input type="text" placeholder="Search" />
+        <input className='search' type="text" placeholder="Search" />
         <div className="user">
           <i className="far fa-compass fa-2x"></i>
           <i className="far fa-heart fa-2x"></i>

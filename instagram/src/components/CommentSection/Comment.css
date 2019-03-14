@@ -15,10 +15,21 @@ span {
   margin-right: 5px;
 }
 
-.username {
-  font-weight: bold;
-}
-
 p {
   display: inline-block
+}
+
+.date {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.addComment {
+  border: none;
+  padding: 10px 0;
+  font-size: 1.8rem;
+}
+
+.addComment:focus {
+  outline: none;  
 }
