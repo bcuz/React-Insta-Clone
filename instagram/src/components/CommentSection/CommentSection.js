@@ -6,7 +6,8 @@ import Comment from './Comment';
 class CommentSection extends Component {
   state = {
     comments: this.props.comments,
-    input: ''
+    input: '',
+    likes: this.props.likes,
   }
 
   // dont think you need index here.
@@ -22,7 +23,13 @@ class CommentSection extends Component {
     })
   }
 
-  changeHandler = (e) => {
+  handleLikeClick = (e) => {
+    this.setState(prevState => {
+      return {likes : prevState.likes + 1}
+    })
+  }
+
+  handleValChange = (e) => {
     this.setState({input: e.target.value})
   }
   
@@ -34,13 +41,13 @@ class CommentSection extends Component {
     return (    
       <div className="comments">
         {/* maybe make into separate component */}
-        <i className="far fa-heart fa-2x"></i>
+        <i onClick={this.handleLikeClick} className="far fa-heart fa-2x"></i>
         <i className="far fa-comment fa-2x"></i>
-        <div className='likes'>{this.props.likes} likes</div>
+        <div className='likes'>{this.state.likes} likes</div>
         {this.state.comments.map(comment => <Comment comment={comment} /> )}
         <div className='date'>{dateFormatted}</div>
         <form onSubmit={this.addNewComment}>
-          <input onChange={this.changeHandler}
+          <input onChange={this.handleValChange}
           value={this.state.input} 
           className="addComment" 
           type="text" 
