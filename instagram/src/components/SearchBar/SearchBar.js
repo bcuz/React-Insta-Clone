@@ -2,22 +2,16 @@ import React, { Component } from 'react';
 import './SearchBar.css';
 
 class SearchBar extends Component {
-  state = {
-    input: ''
-  }
 
-  handleValChange = (e) => {
-    this.setState({input: e.target.value})
-  }
+  textInput = React.createRef()
 
   handleSubmit = (e) => { 
     e.preventDefault()
 
-    this.props.search(this.state.input)
+    this.props.search(this.textInput.current.value)
   }
 
   render() {
-
     return (
       <header>
         <div className="container">
@@ -26,7 +20,7 @@ class SearchBar extends Component {
             <h1>Instagram</h1>
           </div>        
           <form onSubmit={this.handleSubmit}>
-            <input value={this.props.input} onChange={this.handleValChange}  className='search' type="text" placeholder="Search" />
+            <input ref={this.textInput} className='search' type="text" placeholder="Search" />
           </form>
           <div className="user">
             <i className="far fa-compass fa-2x"></i>
