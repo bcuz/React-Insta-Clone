@@ -11,7 +11,7 @@ class App extends Component {
     super();
     this.state = {
       data: [],
-      input: ''
+      // input: ''
       
     };
   }
@@ -20,24 +20,15 @@ class App extends Component {
     this.setState({data})
   }
 
-  handleValChange = (e) => {
-    this.setState({input: e.target.value})
-  }
-
-  handleSubmit = (e) => { 
-    e.preventDefault()
-    
-    // this.state.data.forEach(p => alert(p.username))
-
+  search = inputText => { 
     this.setState( prevState => {
       return { 
         data: prevState.data.filter(post => {          
-          // playhearthstone
-          
-          return post.username === prevState.input
+          // playhearthstone          
+          return post.username === inputText
         })
       }
-    })
+    }) 
   }
   
   render() {
@@ -52,7 +43,7 @@ class App extends Component {
 
     return (
       <div>
-          <SearchBar input={this.state.input} handleValChange={this.handleValChange} handleSubmit={this.handleSubmit} />
+          <SearchBar input={this.state.input} search={this.search} />
           {posts}        
       </div>
     );
