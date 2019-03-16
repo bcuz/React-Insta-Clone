@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import data from './data';
 import PostContainer from './components/PostContainer/PostContainer';
+import NoPosts from './components/PostContainer/NoPosts';
 import SearchBar from './components/SearchBar/SearchBar';
 
 import './App.css';
@@ -40,10 +41,19 @@ class App extends Component {
   }
   
   render() {
+    let posts;
+    let results = this.state.data
+
+    if (results.length) {
+      posts = results.map(post => <PostContainer post={post} />)
+    } else {
+      posts = <NoPosts />
+    }
+
     return (
       <div>
           <SearchBar input={this.state.input} handleValChange={this.handleValChange} handleSubmit={this.handleSubmit} />
-          {this.state.data.map(post => <PostContainer post={post} />)}        
+          {posts}        
       </div>
     );
   }
