@@ -9,18 +9,40 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
+      input: ''
+      
     };
   }
 
   componentDidMount() {
     this.setState({data})
   }
+
+  handleValChange = (e) => {
+    this.setState({input: e.target.value})
+  }
+
+  handleSubmit = (e) => { 
+    e.preventDefault()
+    
+    // this.state.data.forEach(p => alert(p.username))
+
+    this.setState( prevState => {
+      return { 
+        data: prevState.data.filter(post => {          
+          // playhearthstone
+          
+          return post.username === prevState.input
+        })
+      }
+    })
+  }
   
   render() {
     return (
       <div>
-          <SearchBar />
+          <SearchBar input={this.state.input} handleValChange={this.handleValChange} handleSubmit={this.handleSubmit} />
           {this.state.data.map(post => <PostContainer post={post} />)}        
       </div>
     );
