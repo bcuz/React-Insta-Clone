@@ -6,6 +6,14 @@ const withAuthenticate = PostsPage => LoginPage => class extends React.Component
     loggedIn: false
   }
 
+  componentDidMount() {
+    let user = localStorage.getItem("username");
+
+    if (user === 'bob') {
+      this.setState({loggedIn: true})
+    }
+  }
+
   render() {
     return (
       <div>
