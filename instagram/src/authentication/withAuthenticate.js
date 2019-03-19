@@ -1,9 +1,17 @@
 import React from 'react';
 
 
-const withAuthenticate = WrappedComponent => class extends React.Component {
+const withAuthenticate = PostsPage => LoginPage => class extends React.Component {
+  state = {
+    loggedIn: false
+  }
+
   render() {
-    return <WrappedComponent data={this.props.data} />;
+    return (
+      <div>
+        {this.state.loggedIn ? <PostsPage /> : <LoginPage />}
+      </div>
+      );
   }
 }
 
