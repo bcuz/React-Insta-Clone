@@ -1,40 +1,17 @@
 import React, { Component } from 'react';
-import data from './data';
 import PostsPage from './components/PostContainer/PostsPage';
-import SearchBar from './components/SearchBar/SearchBar';
+import withAuthenticate from './authentication/withAuthenticate';
 
 import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      // input: ''
-      
-    };
-  }
+let ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 
-  componentDidMount() {
-    this.setState({data})
-  }
-
-  search = inputText => { 
-    this.setState( prevState => {
-      return { 
-        data: prevState.data.filter(post => {          
-          // playhearthstone          
-          return post.username === inputText
-        })
-      }
-    }) 
-  }
+class App extends Component {  
   
   render() {
     return (
       <div>
-        <SearchBar search={this.search} />
-        <PostsPage data={this.state.data} />
+        <ComponentFromWithAuthenticate />
       </div>
     );
   }
