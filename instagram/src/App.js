@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import data from './data';
-import PostContainer from './components/PostContainer/PostContainer';
+import PostsPage from './components/PostContainer/PostsPage';
 import SearchBar from './components/SearchBar/SearchBar';
 
 import './App.css';
@@ -33,8 +33,8 @@ class App extends Component {
   render() {
     return (
       <div>
-          <SearchBar search={this.search} />
-          {this.state.data.map(post => <PostContainer post={post} />)}        
+        <SearchBar search={this.search} />
+        <PostsPage data={this.state.data} />
       </div>
     );
   }
