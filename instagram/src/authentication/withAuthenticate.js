@@ -8,7 +8,7 @@ const withAuthenticate = PostsPage => LoginPage => class extends React.Component
   componentDidMount() {
     let user = localStorage.getItem("username");
 
-    if (user === 'bob') {
+    if (user === 'sam') {
       this.setState({loggedIn: true})
     }
   }

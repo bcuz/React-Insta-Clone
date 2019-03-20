@@ -14,8 +14,10 @@ class CommentSection extends Component {
   addNewComment = (e) => {
     e.preventDefault()
 
+    let user = localStorage.getItem("username");    
+
     this.setState(prevState => {
-      let newComment = {username: "bob", text: this.state.input}
+      let newComment = {username: user, text: this.state.input}
 
       return {
         comments: [...prevState.comments, newComment], input: ''
