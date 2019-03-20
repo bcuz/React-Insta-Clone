@@ -8,11 +8,6 @@ class SearchBar extends Component {
 
   handleValChange = (e) => {
     this.setState({input: e.target.value})
-  }
-
-  handleSubmit = (e) => { 
-    e.preventDefault()
-
     this.props.search(this.state.input)
   }
 
@@ -25,7 +20,7 @@ class SearchBar extends Component {
             <i className="fab fa-instagram fa-2x"></i> 
             <h1>Instagram</h1>
           </div>        
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={e => { e.preventDefault(); }}>
             <input value={this.props.input} onChange={this.handleValChange}  className='search' type="text" placeholder="Search" />
           </form>
           <div className="user">

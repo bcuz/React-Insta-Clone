@@ -23,7 +23,7 @@ class PostsPage extends Component {
       return { 
         data: prevState.data.filter(post => {          
           // playhearthstone          
-          return post.username === inputText
+          return post.username.includes(inputText)
         })
       }
     }) 
