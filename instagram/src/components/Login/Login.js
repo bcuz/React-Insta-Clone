@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './Footer.css';
+import './Login.css';
 
 class Login extends Component {
   state = {
@@ -22,10 +22,11 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.login}>
-          <input onChange={this.changeInputHandler} type='text' />
-          <input type='password' />
-          <input type='submit' />
+        {/* <h2>Instagram</h2> */}
+        <form className='login' onSubmit={this.login}>
+          <input placeholder="Username" onChange={this.changeInputHandler} type='text' />
+          <input placeholder="Password" type='password' />
+          <input type='submit' value='Log in'/>
         </form>
       </div>
     )
