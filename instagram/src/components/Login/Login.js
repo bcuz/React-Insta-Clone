@@ -8,10 +8,8 @@ class Login extends Component {
 
   login = (e) => {
     e.preventDefault()
-    let user = localStorage.getItem("username");
-    if (user === null) {
-      localStorage.setItem("username", this.state.username);
-    }
+
+    localStorage.setItem("username", this.state.username);
 
     window.location.reload();
 
