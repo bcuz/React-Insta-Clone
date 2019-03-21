@@ -1,11 +1,13 @@
 import React from 'react';
 // import './Footer.css';
 
+import Username from '../../styles/resusable';
+
 const PostHeader = props => {
   return (
     <div className='header'>
       <img className='thumb' src={props.thumbnail} />
-      <span className='username'>{props.username}</span>
+      <Username>{props.username}</Username>
     </div>
   )
 }
