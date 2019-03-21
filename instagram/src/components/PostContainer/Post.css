@@ -4,6 +4,7 @@
   padding: 20px;
 }
 
+/* takes on values from bar's container if named the same. */
 .contain {
   max-width: 640px;
   margin: 0 auto;

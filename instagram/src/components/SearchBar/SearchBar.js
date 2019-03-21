@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './SearchBar.css';
+
+let Header = styled.header`
+  border-bottom: 1px solid #eee;
+`;
+
+let Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+`;
 
 class SearchBar extends Component {
 
@@ -13,8 +26,8 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <header>
-        <div className="container">
+      <Header>
+        <Container>
           <div className="logo">
             <i className="fab fa-instagram fa-2x"></i> 
             <h1>Instagram</h1>
@@ -27,8 +40,8 @@ class SearchBar extends Component {
             <i className="far fa-heart fa-2x"></i>
             <i className="far fa-user fa-2x"></i>
           </div>
-        </div>
-      </header>
+        </Container>
+      </Header>
     )
   }
 }
