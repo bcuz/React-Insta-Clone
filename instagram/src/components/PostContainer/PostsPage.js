@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import data from '../../data';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
+import NoPosts from './NoPosts';
 
 class PostsPage extends Component {
   constructor() {
@@ -30,12 +31,21 @@ class PostsPage extends Component {
   }
   
   render() {
+    let posts;
+    let results = this.state.data
+
+    if (results.length) {
+      posts = results.map(post => <PostContainer post={post} />)
+    } else {
+      posts = <NoPosts />
+    }
+
     return (
       <div>
-        <SearchBar search={this.search} />
-        {this.state.data.map(post => <PostContainer post={post} />)}        
+          <SearchBar search={this.search} />
+          {posts}        
       </div>
-    )
+    );
   }
 }
 
