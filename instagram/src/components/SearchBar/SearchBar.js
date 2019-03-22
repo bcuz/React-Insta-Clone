@@ -66,7 +66,7 @@ class SearchBar extends Component {
             <h1>Instagram</h1>
           </Logo>        
           <Form onSubmit={e => { e.preventDefault(); }}>
-            <Input value={this.props.input} onChange={this.handleValChange} placeholder="Search" />
+            <Input value={this.state.input} onChange={this.handleValChange} placeholder="Search" />
           </Form>
           <User>
             <i className="far fa-compass fa-2x"></i>

@@ -9,9 +9,7 @@ class PostsPage extends Component {
   constructor() {
     super();
     this.state = {
-      data: [],
-      // input: ''
-      
+      data: [],      
     };
   }
 
