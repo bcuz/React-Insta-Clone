@@ -47,16 +47,17 @@ let User = styled.div`
 `;
 
 class SearchBar extends Component {
+  state = {
+    input: ''
+  }
 
-  textInput = React.createRef()
-
-  handleSubmit = (e) => { 
-    e.preventDefault()
-
-    this.props.search(this.textInput.current.value)
+  handleValChange = (e) => {
+    this.setState({input: e.target.value})
+    this.props.search(this.state.input)
   }
 
   render() {
+
     return (
       <Header>
         <Container>
@@ -64,8 +65,8 @@ class SearchBar extends Component {
             <i className="fab fa-instagram fa-2x"></i> 
             <h1>Instagram</h1>
           </Logo>        
-          <Form onSubmit={this.handleSubmit}>
-            <Input ref={this.textInput} placeholder="Search" />
+          <Form onSubmit={e => { e.preventDefault(); }}>
+            <Input value={this.props.input} onChange={this.handleValChange} placeholder="Search" />
           </Form>
           <User>
             <i className="far fa-compass fa-2x"></i>
