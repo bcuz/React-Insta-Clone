@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './Comment.css';
 import PropTypes from 'prop-types';
 import Comment from './Comment';
+
+let Container = styled.div`
+  padding: 10px
+`;
+let Likes = styled.div`
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
+let Date = styled.div`
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  color: #787474;
+`;
+let Input = styled.input`
+  border: none;
+  padding: 10px 0;
+  font-size: 1.8rem;
+  width: 100%;
+
+  &:focus {
+    outline: none;  
+  }
+`;
 
 class CommentSection extends Component {
   state = {
@@ -14,8 +38,10 @@ class CommentSection extends Component {
   addNewComment = (e) => {
     e.preventDefault()
 
+    let user = localStorage.getItem("username");    
+
     this.setState(prevState => {
-      let newComment = {username: "bob", text: this.state.input}
+      let newComment = {username: user, text: this.state.input}
 
       return {
         comments: [...prevState.comments, newComment], input: ''
@@ -39,21 +65,20 @@ class CommentSection extends Component {
     let dateFormatted = this.props.timestamp.slice(0, sliceTo)
   
     return (    
-      <div className="comments">
+      <Container>
         {/* maybe make into separate component */}
         <i onClick={this.handleLikeClick} className="far fa-heart fa-2x"></i>
         <i className="far fa-comment fa-2x"></i>
-        <div className='likes'>{this.state.likes} likes</div>
+        <Likes>{this.state.likes} likes</Likes>
         {this.state.comments.map(comment => <Comment comment={comment} /> )}
-        <div className='date'>{dateFormatted}</div>
+        <Date>{dateFormatted}</Date>
         <form onSubmit={this.addNewComment}>
-          <input onChange={this.handleValChange}
+          <Input onChange={this.handleValChange}
           value={this.state.input} 
           className="addComment" 
-          type="text" 
           placeholder="Add a comment..." />
         </form>
-      </div>
+      </Container>
   )
   }
 }
