@@ -14,6 +14,38 @@ let Container = styled.div`
   padding: 20px;
 `;
 
+let Logo = styled.div`
+  display: flex;
+  align-items: center;
+
+  h1 {
+    border-left: 1px solid #000;
+    padding-left: 10px;
+    font-size: 2.2rem;
+  }
+`;
+
+let Form = styled.form`
+  display: flex;
+  align-items: center;
+`
+
+let Input = styled.input`
+  text-align:center;
+  border-radius: 2px;
+  /* gotta be a better way than fixed width */
+  width: 200px;
+  background-color: #fafafa;
+  padding: 3px 0;
+`
+
+let User = styled.div`
+  /* gotta be a better way than fixed width */
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+`;
+
 class SearchBar extends Component {
 
   textInput = React.createRef()
@@ -28,18 +60,18 @@ class SearchBar extends Component {
     return (
       <Header>
         <Container>
-          <div className="logo">
+          <Logo>
             <i className="fab fa-instagram fa-2x"></i> 
             <h1>Instagram</h1>
-          </div>        
-          <form onSubmit={this.handleSubmit}>
-            <input ref={this.textInput} className='search' type="text" placeholder="Search" />
-          </form>
-          <div className="user">
+          </Logo>        
+          <Form onSubmit={this.handleSubmit}>
+            <Input ref={this.textInput} placeholder="Search" />
+          </Form>
+          <User>
             <i className="far fa-compass fa-2x"></i>
             <i className="far fa-heart fa-2x"></i>
             <i className="far fa-user fa-2x"></i>
-          </div>
+          </User>
         </Container>
       </Header>
     )

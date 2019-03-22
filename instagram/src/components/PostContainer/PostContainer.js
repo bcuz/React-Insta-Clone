@@ -2,7 +2,6 @@ import React from 'react';
 // import './Footer.css';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import './Post.css';
 import CommentSection from '../CommentSection/CommentSection';
 import PostImg from './PostImg';
 import PostHeader from './PostHeader';
