@@ -8,8 +8,8 @@ const withAuthenticate = PostsPage => LoginPage => class extends React.Component
   componentDidMount() {
     let user = localStorage.getItem("username");
 
-    if (user === 'sam') {
-      this.setState({loggedIn: true})
+    if (user === 'adam') {
+      this.setState({ loggedIn: true })
     }
   }
 
@@ -18,7 +18,7 @@ const withAuthenticate = PostsPage => LoginPage => class extends React.Component
       <div>
         {this.state.loggedIn ? <PostsPage /> : <LoginPage />}
       </div>
-      );
+    );
   }
 }
 
